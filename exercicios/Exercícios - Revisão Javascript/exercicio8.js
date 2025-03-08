@@ -1,6 +1,16 @@
-let pessoa = { nome: "Carlos", idade: 28, cidade: "São Paulo" };
+let pessoa = {
+    nome: "Carlos",
+    idade: 28,
+    cidade: "São Paulo"
+  };
 
-pessoa.profissao = "Desenvolvedor";  
-delete pessoa.idade; 
+  pessoa.profissao = "Desenvolvedor";
 
-console.log(Object.keys(pessoa)); 
+  delete pessoa.cidade;
+  
+
+  console.log("Propriedades do objeto:");
+  for (let chave in pessoa) {
+    console.log(chave + ": " + pessoa[chave]);
+  }
+  
