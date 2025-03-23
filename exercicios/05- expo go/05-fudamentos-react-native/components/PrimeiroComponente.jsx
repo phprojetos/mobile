@@ -1,19 +1,19 @@
-import { StyleSheet, Text, View} from 'react-native'
-import React from 'react'
-
-
+import React from "react";
+import { View, Text, StyleSheet } from 'react-native'
 
 export default function PrimeiroComponente() {
+
   return (
     <View>
-      <Text>PrimeiroComponente</Text>
+      <Text style={styles.textoGrande} >Primeiro Componente</Text>
     </View>
   )
+
 }
 
 const styles = StyleSheet.create({
-    container: {
-        fontSize: 40,
-        fontWeight: 40
-    },
+  textoGrande: {
+    fontSize: 40,
+    fontWeight: 600
+  }
 })
