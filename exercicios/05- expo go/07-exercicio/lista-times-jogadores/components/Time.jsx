@@ -1,7 +1,7 @@
 import React from 'react'
 import { FlatList, StyleSheet } from 'react-native'
 import { Card, Text } from 'react-native-paper'
-import {Jogador} from './Jogador'
+import Jogador from './Jogador'
 
 export default function Time(props) {
 

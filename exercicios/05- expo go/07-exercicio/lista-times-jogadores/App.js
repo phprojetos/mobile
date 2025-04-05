@@ -93,9 +93,15 @@ export default function App() {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: 'orange',
+    borderWidth: 10,
+    padding: 10,
     alignItems: 'center',
     justifyContent: 'center',
+    flex: 1
   },
-});
+  texto: {
+    fontSize: 20,
+    fontWeight: 600
+  }
+})
