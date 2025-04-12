@@ -21,7 +21,7 @@ export default function App() {
             component={EscudoScreen}
             options={{
               title: 'Escudo',
-              tabBarIcon: ({ color, size }) => <Ionicons name='home' color={color} size={size} />
+              tabBarIcon: ({ color, size }) => <Ionicons name='shield' color={color} size={size} />
             }}
           />
 
@@ -41,8 +41,8 @@ export default function App() {
             name='TitulosScreen'
             component={TitulosScreen}
             options={{
-              title: 'Configurações',
-              tabBarIcon: ({ color, size }) => <Ionicons name='cog' color={color} size={size} />
+              title: 'Titulos',
+              tabBarIcon: ({ color, size }) => <Ionicons name='trophy' color={color} size={size} />
             }}
             />
 
