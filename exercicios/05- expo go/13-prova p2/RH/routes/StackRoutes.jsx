@@ -4,10 +4,13 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { Provider as PaperProvider } from 'react-native-paper';
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import Entypo from 'react-native-vector-icons/Entypo';
+import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 
-import EscudoScreen from './screens/EscudoScreen';
-import JogadoresScreen from './screens/JogadoresScreen';
-import TitulosScreen from './screens/TitulosScreen';
+import VagasScreen from '../screens/VagasScreen';
+import CandidatosScreen from '../screens/CandidatosScreen';
+import FucionariosScreen from '../screens/FuncionariosScreen';
+
 
 const Drawer = createDrawerNavigator();
 
@@ -16,46 +19,37 @@ export default function App() {
     <PaperProvider>
       <NavigationContainer>
         <Drawer.Navigator
-          initialRouteName="Escudo"
+          initialRouteName="Vagas"
           screenOptions={{
             headerStyle: { backgroundColor: '#000' },
             headerTintColor: '#fff',
-            drawerActiveTintColor: '#e53935',
+            drawerActiveTintColor: '#1ac6ca',
           }}
         >
           <Drawer.Screen
-            name="Escudo"
-            component={EscudoScreen}
+            name="Vagas"
+            component={VagasScreen}
             options={{
               drawerIcon: ({ color, size }) => (
-                <Ionicons name="shield" size={size} color={color} />
+                <FontAwesome5 name="check-square" size={size} color={color} />
               ),
             }}
           />
           <Drawer.Screen
-            name="Jogadores"
-            component={JogadoresScreen}
+            name="Candidatos"
+            component={CandidatosScreen}
             options={{
               drawerIcon: ({ color, size }) => (
-                <Ionicons name="people" size={size} color={color} />
-              ),
-            }}
-          />
-          <Drawer.Screen
-            name="Títulos"
-            component={TitulosScreen}
-            options={{
-              drawerIcon: ({ color, size }) => (
-                <Ionicons name="trophy" size={size} color={color} />
+                <Entypo name="add-user" size={size} color={color} />
               ),
             }}
           />
             <Drawer.Screen
-            name="Título"
-            component={TitulosScreen}
+            name="Funcionarios"
+            component={FucionariosScreen}
             options={{
               drawerIcon: ({ color, size }) => (
-                <Ionicons name="trophy" size={size} color={color} />
+                <Ionicons name="people" size={size} color={color} />
               ),
             }}
           />
