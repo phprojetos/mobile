@@ -1,26 +1,31 @@
 import React, { useState, useEffect } from 'react';
 import { View, Text, TextInput, Button, ScrollView, Alert } from 'react-native';
+//import necessario
 import AsyncStorage from '@react-native-async-storage/async-storage';
-
+//import para o armazenamento local
 const VagasScreen = () => {
+  //Guardar a lista de vagas cadastradas
   const [vagas, setVagas] = useState([]);
+  //todos os campos do formulario com seus estados proprios
   const [titulo, setTitulo] = useState('');
   const [empresa, setEmpresa] = useState('');
   const [salario, setSalario] = useState('');
   const [local, setLocal] = useState('');
   const [descricao, setDescricao] = useState('');
+  //edita uma vaga existente
   const [editingId, setEditingId] = useState(null);
+  // gereciar os erros de validação de campos
   const [errors, setErrors] = useState({});
-
+//Carregar as vagas e abre na tela inicial
   useEffect(() => {
     loadVagas();
   }, []);
-
+//recupera os dados que foram salvos 
   const loadVagas = async () => {
     const storedVagas = await AsyncStorage.getItem('vagas');
     if (storedVagas) setVagas(JSON.parse(storedVagas));
   };
-
+//qualquer edição dados ele salva e mostrar
   const saveVagas = async (newVagas) => {
     await AsyncStorage.setItem('vagas', JSON.stringify(newVagas));
     setVagas(newVagas);
@@ -28,7 +33,7 @@ const VagasScreen = () => {
 
   const validateFields = () => {
     const newErrors = {};
-    
+    //validação de campos
     if (!titulo.trim()) newErrors.titulo = 'Título é obrigatório';
     if (!empresa.trim()) newErrors.empresa = 'Empresa é obrigatória';
     if (!salario.trim()) newErrors.salario = 'Salário é obrigatório';
@@ -39,7 +44,7 @@ const VagasScreen = () => {
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
-
+//apenas numeros
   const handleSalarioChange = (text) => {
     setSalario(text.replace(/[^\d]/g, ''));
   };
